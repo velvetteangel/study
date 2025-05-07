@@ -1,0 +1,91 @@
+:root {
+  --primary-bg: #f4f4f4;
+  --primary-text: #333;
+  --header-bg: #6200ea;
+  --header-text: #ffffff;
+  --sidebar-bg: #ffffff;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-bg);
+  background-size: cover;
+  background-position: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Custom Header */
+.custom-header {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--header-bg);
+  color: var(--header-text);
+}
+
+.custom-header h1 {
+  margin: 0;
+}
+
+/* Settings Sidebar */
+.settings-sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: var(--sidebar-bg);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-sidebar.shown {
+  right: 0;
+}
+
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.settings-content {
+  overflow-y: auto;
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+.preview-container {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.preview-image {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.settings-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
