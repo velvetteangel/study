@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Study Room</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Customizable Header -->
+    <header id="customHeader" class="custom-header">
+      <h1 id="headerText">Welcome to Your Study Room</h1>
+    </header>
+
+    <!-- Settings Button -->
+    <button id="settingsToggle" class="settings-toggle">
+      ⚙️
+    </button>
+
+    <!-- Sidebar Settings -->
+    <div id="settingsSidebar" class="settings-sidebar hidden">
+      <div class="settings-header">
+        <h2>Settings</h2>
+        <button id="closeSidebar" class="close-sidebar">✖</button>
+      </div>
+
+      <div class="settings-content">
+        <!-- Header Customization -->
+        <div class="settings-group">
+          <h3>Header Customization</h3>
+          <label for="headerTextInput">Header Text:</label>
+          <input type="text" id="headerTextInput" placeholder="Enter header text">
+          <label for="headerColorInput">Header Background Color:</label>
+          <input type="color" id="headerColorInput">
+          <label for="headerFontSizeInput">Header Font Size:</label>
+          <input type="number" id="headerFontSizeInput" placeholder="Font size (px)">
+          <button id="applyHeaderBtn">Apply Header</button>
+        </div>
+
+        <!-- Background Customization -->
+        <div class="settings-group">
+          <h3>Background Customization</h3>
+          <label for="backgroundImageInput">Upload Background Image:</label>
+          <input type="file" id="backgroundImageInput" accept="image/*">
+          <label for="backgroundImageUrl">Or Enter Image URL:</label>
+          <input type="url" id="backgroundImageUrl" placeholder="Enter image URL">
+          <div id="backgroundPreviewContainer" class="preview-container hidden">
+            <img id="backgroundPreview" class="preview-image" alt="Background Preview">
+            <button id="setBackgroundBtn">Set as Background</button>
+          </div>
+        </div>
+
+        <!-- Font Customization -->
+        <div class="settings-group">
+          <h3>Font Customization</h3>
+          <label for="fontSelector">Choose a Font:</label>
+          <select id="fontSelector">
+            <option value="Arial">Arial</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Trebuchet MS">Trebuchet MS</option>
+            <option value="Tahoma">Tahoma</option>
+            <option value="Comic Sans MS">Comic Sans MS</option>
+            <option value="Impact">Impact</option>
+            <option value="Lucida Console">Lucida Console</option>
+          </select>
+          <button id="applyFontBtn">Apply Font</button>
+        </div>
+
+        <!-- Toggleable Tabs -->
+        <div class="settings-group">
+          <h3>Toggleable Tabs</h3>
+          <button id="toggleYouTubeTab">YouTube</button>
+          <button id="toggleNotesTab">Notes</button>
+        </div>
+
+        <!-- GIF Management -->
+        <div class="settings-group">
+          <h3>GIF Management</h3>
+          <label for="gifInput">Upload GIF:</label>
+          <input type="file" id="gifInput" accept="image/gif">
+          <label for="gifUrlInput">Or Enter GIF URL:</label>
+          <input type="url" id="gifUrlInput" placeholder="Enter GIF URL">
+          <div id="gifPreviewContainer" class="preview-container hidden">
+            <img id="gifPreview" class="preview-image" alt="GIF Preview">
+            <button id="addGifConfirmBtn">Add GIF</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="content"></main>
+
+    <!-- YouTube and Notes Tabs -->
+    <div id="tabsContainer" class="tabs-container hidden">
+      <div id="youtubeTab" class="tab hidden">
+        <h3>YouTube</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div id="notesTab" class="tab hidden">
+        <h3>Notes</h3>
+        <textarea id="notesArea" placeholder="Write your notes here..." rows="10" cols="30"></textarea>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </div>
+</body>
+</html>
